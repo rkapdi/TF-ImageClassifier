@@ -1,0 +1,17 @@
+div.uploadBtn{
+  width: 100px;
+  height:100px;
+
+}
+
+#file{
+  opacity:0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.imageChecker{
+  display: none;
+}

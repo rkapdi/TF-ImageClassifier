@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <title>Image Classifier</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Image Classifier</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#">About</a> -->
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="jumbotron">
+        <h1 class="display-4">ML Image Classifier</h1>
+        <p class="lead">This is my first ML applicaton. The site takes an image as an input and detects the object in the image.</p>
+        <hr class="my-4">
+
+        <form id="upload-file" method="post" enctype="multipart/form-data">
+            <label for="imageUpload" class="upload-label" style="display: block;">
+                    <p class="lead">Upload an Image to use the AI prediction model</p>
+            </label>
+            <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg" style="display: block;" onchange="preview_image(event)">
+            <a id="btn-upload" class="btn btn-info btn-lg" href="#" role="button" style="margin: 1.5rem 0 0;">Upload</a>
+        </form>
+
+        <div class="jumbotron jumbotron-fluid" >
+          <div class="container1">
+            <h1 class="display-4">Image Preview</h1>
+
+            <div class="image-section">
+              <img src="#" alt="image input" id="previewImage" style="
+    width: 600px;
+    height: 600px;
+">
+              <br>
+              <button type="button" class="btn btn-primary btn-lg" id="predictionButton" name="button" style="position:relative">Predict</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="prediction">
+          <div class="loader"></div>
+          <h2 id="prediction"></h2>
+        </div>
+
+      </div> <!--JUMBOTRON CLOSING TAG-->
+
+
+
+
+    </main>
+
+    <br></br>
+
+    <footer style="position:relative">
+      <div class="copyrightSection">
+        <div class="col-md-12 text-center">
+          <p>&copy; Copyright Rissalat A. Kapdi 2019</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
+    <script src="js/index.js"></script>
+    <script >
+    function preview_image(event)
+    {
+     var reader = new FileReader();
+     reader.onload = function() {
+      var output = document.getElementById('previewImage');
+      output.src = reader.result;
+      console.log(reader.result)
+    //    url=
+     }
+     reader.readAsDataURL(event.target.files[0]);
+    }
+    </script>
+
+  </body>
+</html>

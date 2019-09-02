@@ -1,0 +1,42 @@
+
+.previewImage{
+  width: 256px;
+  height: 256px;
+  position: relative;
+  border: 30px solid #F0F0F0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.jumbotron {
+    padding: 4rem 2rem 1rem;
+    background-color: #488;
+    margin-bottom:0 !important;
+}
+
+.predictionButton
+{
+  padding: 30px 5px;
+  position: relative;
+}
+
+.copyrightSection{
+  background-color: #000;
+  color: #fff;
+  padding: 30px 5px;
+}
+
+.copyrightSection p{
+  margin: 0;
+}
+
+.jumbotron jumbotron-fluid{
+  background-color: #000;
+}
+
+body {
+	font-size: 14px;
+  color: #333;
+  background-color: #000;
+  letter-spacing: 1px;
+}
